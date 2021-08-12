@@ -1,0 +1,784 @@
+$fontfamily: "Lato", sans-serif;
+$brand-warning: #df6727;
+$green: #064984;
+$blackbrown: #0e1817;
+$white: #fff;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $fontfamily;
+  background-color: $blackbrown;
+  color: $white;
+
+  a {
+    text-decoration: none;
+  }
+}
+
+html {
+  font-size: 15px;
+  scroll-behavior: smooth;
+}
+
+@mixin mybtn {
+  width: 150px;
+  height: 50px;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: $green;
+  border: none;
+  font-family: $fontfamily;
+  margin: 2.5rem 0;
+  transition: 1s;
+}
+
+.flex_box {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.right {
+  margin-left: 24%;
+  padding: 3% 0 2%;
+}
+
+.inner {
+  text-align: center;
+  margin: 0 auto;
+
+  padding: 4% 10% 5% 7%;
+}
+
+.underline {
+  width: 150px;
+  height: 0.3rem;
+  border-radius: 30%;
+  margin: 0.5rem auto;
+  background-color: $green;
+  transition: 2s;
+}
+
+h1 {
+  font-size: 3rem;
+}
+
+.toggel {
+  background-color: $white;
+  width: 55px;
+  height: 55px;
+  padding: 0.5rem 1rem 0;
+  z-index: 9;
+  position: fixed;
+  display: none;
+  //    margin-top: 5rem;
+
+  .openbtn {
+    color: $green;
+    font-size: 2rem;
+    position: fixed;
+    cursor: pointer;
+  }
+}
+
+// nav starts
+nav {
+  width: 310px;
+  height: 100%;
+  text-align: center;
+  background-color: $green;
+  color: white;
+  position: fixed;
+  margin-left: 7%;
+  //   top: 0;
+  //   bottom: 0;
+  z-index: 9;
+  padding: 0;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  overflow: hidden;
+  transition: 0.5s;
+
+  .closebtn {
+    background-color: $white;
+    padding: 0.2rem 0;
+
+    a {
+      font-size: 2.5rem;
+      color: $green;
+    }
+    display: none;
+  }
+
+  .myimg {
+    margin-top: 2rem;
+    height: 250px;
+
+    img {
+      width: 50%;
+      height: 140px;
+      border-radius: 50%;
+    }
+
+    h3 {
+      font-size: 1.6rem;
+      font-weight: 600;
+      padding: 1rem 0 0.3rem;
+    }
+    h4 {
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
+  }
+
+  menu {
+    margin: 3rem 0 2rem;
+    padding: 0;
+    ul {
+      padding: 0;
+
+      li {
+        padding: 2rem 0;
+        border-top: 1px solid white;
+        list-style: none;
+        transition: 1.5s;
+        cursor: pointer;
+
+        a:link,
+        a:visited,
+        a:active {
+          text-decoration: none;
+          font-size: 1.1rem;
+          font-weight: 600;
+          color: #fff;
+          padding: 9.8% 48% 9.8% 42%;
+        }
+
+        a.active {
+          color: $green;
+          text-shadow: 0 0.7rem 0.9rem $blackbrown;
+          background-color: white;
+          padding: 9.8% 48% 9.8% 42%;
+          transition: 0.1s;
+        }
+
+        a:hover {
+          color: $brand-warning;
+        }
+        a.nav-link.active:hover {
+          color: $brand-warning;
+        }
+      }
+    }
+    ul li:last-child {
+      border-bottom: 1px solid white;
+    }
+  }
+}
+
+// nav ends ===========
+// nav ends ===========
+
+// header starts from here--------------------
+header {
+  .banner {
+    width: 70%;
+    height: 500px;
+    margin: 0 auto;
+    background: url("../img/serena.jpg"), rgb(47, 82, 125);
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    background-blend-mode: multiply;
+    transition: 2s;
+
+    h1 {
+      padding-top: 15%;
+      font-size: 6rem;
+      color: $green;
+      transition: 2s;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      padding: 1rem 0;
+      transition: 2s;
+    }
+
+    h3 {
+      font-size: 1.5rem;
+      font-weight: 100;
+      transition: 2s;
+    }
+
+    .mybtn {
+      @include mybtn;
+
+      a {
+        color: $green;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+    }
+
+    .mybtn:hover {
+      background-color: $green;
+
+      a {
+        color: $white;
+      }
+    }
+  }
+
+  .banner:hover {
+    background-blend-mode: normal;
+    transform: scale(0.8);
+    border: 2rem solid $green;
+    h1,
+    h2,
+    h3,
+    .underline {
+      display: none;
+    }
+    button {
+      margin-top: 50%;
+    }
+  }
+}
+
+// header ends here----------------------
+
+// about me section starts -------------------------
+
+.about_me {
+  .inner {
+    h1 {
+      font-size: 3rem;
+    }
+
+    .para {
+      width: 85%;
+      height: 60%;
+      margin: 3rem auto;
+      background-color: rgb(58, 62, 63);
+      padding: 4rem;
+      box-shadow: 0 0.4rem 0.7rem $green;
+      transition: 1s;
+
+      p {
+        padding-top: 2rem;
+        font-size: 1.4rem;
+        line-height: 1.7;
+        text-align: justify;
+        text-shadow: 0 0.7rem 0.9rem $blackbrown;
+      }
+
+      .mybtn {
+        @include mybtn;
+        background-color: $green;
+        color: $white;
+        box-shadow: 0.2rem 0.2rem 0.9rem $blackbrown;
+      }
+      .mybtn:hover {
+        background-color: $white;
+        color: $green;
+      }
+    }
+    .para:hover {
+      background-color: $green;
+      box-shadow: 0 0.4rem 0.7rem $white;
+      transform: scale(1.1);
+    }
+  }
+}
+
+// about me section ends-------------------------
+
+// my_skills section starts here------------------------
+
+.my_skills {
+  text-align: center;
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .inner {
+    //  flex-direction: column;
+
+    .skills {
+      width: 48.8%;
+      height: 35%;
+      padding: 2rem 5rem;
+      background: rgba(101, 126, 133, 0.1);
+      border-top: 1px solid rgba(101, 117, 133, 0.5);
+      border-left: 1px solid #d8dcdd88;
+      border-radius: 10px;
+      margin-bottom: 2rem;
+      transition: all 0.7s ease-in-out;
+
+      span {
+        font-size: 3rem;
+      }
+      h3 {
+        font-size: 1.7rem;
+        padding: 2rem;
+      }
+      p {
+        font-size: 1.2rem;
+        line-height: 1.8;
+      }
+    }
+
+    .skills:hover {
+      background-color: $white;
+      color: $green;
+      text-shadow: 0 0.7rem 0.9rem $blackbrown;
+    }
+
+    //  // ===========================================================================================================
+    // ++++++++++++++++++++++++++++++ --  ProgressBar  -- +++++++++++++++++++++++++++++++++++++++++
+
+    h5 {
+      font-size: 1.1rem;
+      padding: 1rem 0;
+    }
+
+    $brand-primary: #2196f3;
+    $brand-success: #16682a;
+    $brand-warning: #df6727;
+    $brand-info: #29b6f6;
+    $brand-danger: #ef1c1c;
+    $bg-light-gray: #f5f5f5;
+
+    .progress {
+      background-color: $bg-light-gray;
+      border-radius: 3px;
+      margin-bottom: 1.5rem;
+      box-shadow: none;
+    }
+
+    @mixin gradient-striped($color: rgba(255, 255, 255, 0.15), $angle: 45deg) {
+      background-image: -webkit-linear-gradient(
+        $angle,
+        $color 25%,
+        transparent 25%,
+        transparent 50%,
+        $color 50%,
+        $color 75%,
+        transparent 75%,
+        transparent
+      );
+      background-image: -o-linear-gradient(
+        $angle,
+        $color 25%,
+        transparent 25%,
+        transparent 50%,
+        $color 50%,
+        $color 75%,
+        transparent 75%,
+        transparent
+      );
+      background-image: linear-gradient(
+        $angle,
+        $color 25%,
+        transparent 25%,
+        transparent 50%,
+        $color 50%,
+        $color 75%,
+        transparent 75%,
+        transparent
+      );
+    }
+
+    @-webkit-keyframes progress-bar-stripes {
+      from {
+        background-position: 40px 0;
+      }
+      to {
+        background-position: 0 0;
+      }
+    }
+
+    // Spec and IE10+
+    @keyframes progress-bar-stripes {
+      from {
+        background-position: 40px 0;
+      }
+      to {
+        background-position: 0 0;
+      }
+    }
+
+    @mixin animation($animation) {
+      -webkit-animation: $animation;
+      -o-animation: $animation;
+      animation: $animation;
+    }
+    .progress.active .progress-bar,
+    .progress-bar.active {
+      @include animation(progress-bar-stripes 2s linear infinite);
+    }
+    .progress-striped .progress-bar,
+    .progress-bar-striped {
+      @include gradient-striped;
+      background-size: 40px 40px;
+    }
+    @mixin progress-bar-variant($color) {
+      background-color: $color;
+    }
+
+    .progress-bar-primary {
+      @include progress-bar-variant($brand-primary);
+    }
+    .progress-bar-info {
+      @include progress-bar-variant($brand-info);
+    }
+
+    .progress-bar-success {
+      @include progress-bar-variant($brand-success);
+    }
+
+    .progress-bar-warning {
+      @include progress-bar-variant($brand-warning);
+    }
+
+    .progress-bar-danger {
+      @include progress-bar-variant($brand-danger);
+    }
+
+    //  ++++++++++++++++++++++++++++++++++++++++++ ----Progress Bar ends ------ +++++++++++++++++++++++++++++++
+    // ===========================================================================================================
+  }
+}
+
+// about me section ends here---------------------------------
+
+// projects section starts  from here----------------------
+
+.my_work {
+  text-align: center;
+
+  h1 {
+    font-size: 3rem;
+    margin-top: 2rem;
+  }
+
+  .inner {
+    .projects {
+      background-color: rgb(6, 70, 99);
+      width: 30%;
+
+      margin-bottom: 5%;
+      position: relative;
+
+      .box {
+        .image {
+          overflow: hidden;
+          background-color: rgb(30, 102, 210);
+          img {
+            width: 100%;
+            transition: all 3s ease;
+          }
+        }
+
+        .img_details {
+          position: absolute;
+
+          width: 85%;
+          height: 85%;
+          margin: 0 auto;
+          left: 0px;
+          right: 0px;
+          top: 20px;
+          padding: 1rem;
+          background-color: rgba(13, 106, 145, 0.59);
+          transform: scaleY(0);
+          transition: all 1s ease;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+
+          h3 {
+            font-size: 1.5rem;
+            color: $white;
+            text-shadow: 0 0.4rem 0.2rem black;
+          }
+        }
+        img:hover {
+          transform: scale(1.3);
+        }
+      }
+    }
+
+    .projects:hover .img_details {
+      transform: scaleY(1);
+    }
+
+    .mybtn {
+      @include mybtn;
+      width: 90px;
+      box-shadow: 0.1rem 0.4rem 0.7rem black;
+
+      a {
+        color: $green;
+      }
+    }
+
+    .mybtn:hover {
+      background-color: $green;
+      a {
+        color: $white;
+      }
+    }
+  }
+}
+
+// projects ends here
+
+// contact section starts here
+
+.contact_section {
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact {
+  width: 60%;
+  height: 80%;
+  background-color: rgb(58, 63, 62);
+  padding: 3rem;
+  transition: 2s;
+  justify-content: space-between;
+  flex-direction: column;
+
+  h1 {
+    font-size: 3rem;
+  }
+
+  .links {
+    margin: 0 20%;
+    a {
+      font-size: 1.8rem;
+      color: $brand-warning;
+      transition: all 0.3s ease;
+      animation: rotate 10s infinite;
+    }
+  }
+
+  p {
+    font-size: 1.5rem;
+    font-weight: 400;
+  }
+
+  span {
+    color: $brand-warning;
+    font-weight: 800;
+  }
+
+  @keyframes rotate {
+    0% {
+      transform: rotate(360deg);
+    }
+    70% {
+      color: $white;
+    }
+  }
+}
+
+a:hover {
+  transform: scale(1.5);
+}
+
+.contact:hover {
+  background-color: $green;
+  box-shadow: 0 0.4rem 0.7rem $brand-warning;
+  width: 100%;
+  height: 100%;
+
+  .links {
+    flex-direction: column;
+
+    a {
+      padding: 2rem 0;
+    }
+  }
+}
+
+// contact ends here
+
+// ===============================media query============================//
+
+@media (max-width: 1650px) {
+  html {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 1500px) {
+  nav {
+    margin-left: 2%;
+  }
+}
+
+@media (max-width: 1300px) {
+  nav {
+    margin-left: 0;
+  }
+
+  .right {
+    margin-left: 30%;
+    padding: 3% 0;
+  }
+}
+
+@media (max-width: 1100px) {
+  .right {
+    margin-left: 35%;
+    padding: 3% 0;
+  }
+  .my_work {
+    .inner {
+      .projects {
+        width: 260px;
+      }
+    }
+  }
+}
+@media (max-width: 1000px) {
+  .my_skills {
+    .inner {
+      flex-direction: column;
+      .skills {
+        width: 100%;
+        padding: 2rem 4rem;
+      }
+    }
+  }
+
+  .my_work {
+    .inner {
+      flex-direction: row;
+      .projects {
+        width: 220px;
+      }
+    }
+  }
+
+  .contact {
+    width: 85%;
+    height: 80%;
+  }
+}
+
+@media (max-width: 850px) {
+  nav {
+    //  width: 0px;
+    margin-left: -350px;
+
+    li {
+      padding: 1.5rem 0;
+    }
+    .active {
+      padding: 1.6rem 10.5rem;
+    }
+
+    .closebtn {
+      display: block;
+    }
+  }
+
+  .toggel {
+    display: block;
+  }
+
+  .right {
+    margin: 0 auto;
+
+    header {
+      .banner {
+        width: 90%;
+      }
+    }
+
+    .my_work {
+      h1 {
+        margin-top: 4rem;
+      }
+    }
+  }
+}
+
+@media (max-width: 800px) {
+  .my_work {
+    .inner {
+      flex-direction: row;
+      .projects {
+        width: 45%;
+      }
+    }
+  }
+}
+
+@media (max-width: 460px) {
+  html {
+    font-size: 9px;
+  }
+
+  header {
+    .banner {
+      h1 {
+        padding-top: 55%;
+      }
+    }
+  }
+
+  .contact {
+    height: 65%;
+  }
+
+  .toggel {
+    width: 40px;
+    height: 40px;
+  }
+
+  nav {
+    width: 210px;
+  }
+
+  .my_work {
+    .inner {
+      .projects {
+        width: 100%;
+        .box {
+          .img_details {
+            top: 30px;
+
+            h3 {
+              font-size: 4rem;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  header {
+    .banner:hover {
+      button {
+        margin-top: 120%;
+      }
+    }
+  }
+}
